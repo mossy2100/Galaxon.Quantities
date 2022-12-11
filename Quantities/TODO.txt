@@ -1,0 +1,15 @@
+* Write comprehensive tests for Quantity.Parse() and Quantity.ToString().
+
+* Use the "c" format specifier to format currencies correctly. Include a locale code with each
+  currency code.
+
+* Write lots of tests for everything, starting with BaseUnit, Unit, and Quantity.
+* Look for TODO tags.
+
+* Add ConvertTo() method to convert to a specified unit.
+* Add support for parsing sequences, e.g. "5 ft 10 in".
+* Add ToSiDerivedUnits() which will look for compound units that can be replaced by derived units.
+
+Maybe later:
+* Add support for currency codes.
+* Add support for unit kinds.

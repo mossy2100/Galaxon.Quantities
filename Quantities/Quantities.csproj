@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>AstroMultimedia.Quantities</RootNamespace>
+        <Company>Astro Multimedia</Company>
+        <PackageId>Quantities</PackageId>
+        <AssemblyName>AstroMultimedia.Quantities</AssemblyName>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Reference Include="AstroMultimedia.Core.Collections">
+        <HintPath>..\..\Core\Collections\bin\Debug\net7.0\AstroMultimedia.Core.Collections.dll</HintPath>
+      </Reference>
+      <Reference Include="AstroMultimedia.Core.Exceptions">
+        <HintPath>..\..\Core\Exceptions\bin\Debug\net7.0\AstroMultimedia.Core.Exceptions.dll</HintPath>
+      </Reference>
+      <Reference Include="AstroMultimedia.Core.Numbers">
+        <HintPath>..\..\Core\Numbers\bin\Debug\net7.0\AstroMultimedia.Core.Numbers.dll</HintPath>
+      </Reference>
+      <Reference Include="AstroMultimedia.Core.Strings">
+        <HintPath>..\..\Core\Strings\bin\Debug\net7.0\AstroMultimedia.Core.Strings.dll</HintPath>
+      </Reference>
+      <Reference Include="AstroMultimedia.Core.Time">
+        <HintPath>..\..\Core\Time\bin\Debug\net7.0\AstroMultimedia.Core.Time.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+</Project>

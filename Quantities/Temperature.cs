@@ -1,0 +1,42 @@
+﻿namespace AstroMultimedia.Quantities;
+
+public static class Temperature
+{
+    /// <summary>
+    /// Number of degrees difference between 0K and 0°C.
+    /// </summary>
+    public const double CelsiusKelvinDiff = 273.15;
+
+    /// <summary>
+    /// Number of degrees difference between 0°F and 0°C.
+    /// </summary>
+    public const double CelsiusFahrenheitDiff = 32;
+
+    /// <summary>
+    /// Number of degrees Celsius (or kelvins) per degree of Fahrenheit.
+    /// </summary>
+    public const double CelsiusPerFahrenheit = 5.0 / 9;
+
+    /// <summary>
+    /// Convert a temperature in Celsius to Kelvin.
+    /// </summary>
+    /// <param name="c">Temperature in Celsius.</param>
+    /// <returns>Temperature in Kelvin.</returns>
+    public static double CelsiusToKelvin(double c) =>
+        c + CelsiusKelvinDiff;
+
+    public static double KelvinToCelsius(double k) =>
+        k - CelsiusKelvinDiff;
+
+    public static double CelsiusToFahrenheit(double c) =>
+        (c / CelsiusPerFahrenheit) + CelsiusFahrenheitDiff;
+
+    public static double FahrenheitToCelsius(double f) =>
+        (f - CelsiusFahrenheitDiff) * CelsiusPerFahrenheit;
+
+    public static double FahrenheitToKelvin(double f) =>
+        CelsiusToKelvin(FahrenheitToCelsius(f));
+
+    public static double KelvinToFahrenheit(double k) =>
+        CelsiusToFahrenheit(KelvinToCelsius(k));
+}
