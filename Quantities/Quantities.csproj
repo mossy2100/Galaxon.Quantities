@@ -26,6 +26,9 @@
       <Reference Include="AstroMultimedia.Core.Time">
         <HintPath>..\..\Core\Time\bin\Debug\net7.0\AstroMultimedia.Core.Time.dll</HintPath>
       </Reference>
+      <Reference Include="AstroMultimedia.Numerics.Integers">
+        <HintPath>..\..\Numerics\Integers\bin\Debug\net7.0\AstroMultimedia.Numerics.Integers.dll</HintPath>
+      </Reference>
     </ItemGroup>
 
 </Project>

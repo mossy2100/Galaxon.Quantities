@@ -3,6 +3,7 @@ using System.Text.RegularExpressions;
 using AstroMultimedia.Core.Exceptions;
 using AstroMultimedia.Core.Numbers;
 using AstroMultimedia.Core.Strings;
+using AstroMultimedia.Numerics.Integers;
 
 namespace AstroMultimedia.Quantities;
 
@@ -455,7 +456,7 @@ public class Quantity
                 string strExp = match.Groups["exp"].Value;
                 if (strExp != "")
                 {
-                    strExp = $"×10{int.Parse(strExp).ToSuperscriptString()}";
+                    strExp = $"×10{int.Parse(strExp).ToSuperscript()}";
                 }
 
                 strAmount = $"{strNum}{strExp}";

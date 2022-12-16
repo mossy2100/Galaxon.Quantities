@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
 using AstroMultimedia.Core.Exceptions;
-using AstroMultimedia.Core.Numbers;
+using AstroMultimedia.Numerics.Integers;
 
 namespace AstroMultimedia.Quantities;
 
@@ -56,7 +56,7 @@ public class Unit
     {
         string strExp = (Exponent == 1)
             ? ""
-            : (format == "U" ? Exponent.ToSuperscriptString() : Exponent.ToString());
+            : (format == "U" ? Exponent.ToSuperscript() : Exponent.ToString());
         return $"{Prefix?.Symbol}{BaseUnit.Symbol}{strExp}";
     }
 
