@@ -1,8 +1,8 @@
 using System.Text.RegularExpressions;
-using AstroMultimedia.Core.Exceptions;
-using AstroMultimedia.Numerics.Integers;
+using Galaxon.Core.Exceptions;
+using Galaxon.Core.Strings;
 
-namespace AstroMultimedia.Quantities;
+namespace Galaxon.Quantities;
 
 /// <summary>
 /// Encapsulates a unit with an optional multiplier (coming from a prefix) and exponent.
@@ -56,7 +56,7 @@ public class Unit
     {
         string strExp = (Exponent == 1)
             ? ""
-            : (format == "U" ? Exponent.ToSuperscript() : Exponent.ToString());
+            : ((format == "U" ? Exponent.ToSuperscript() : Exponent.ToString()) ?? "");
         return $"{Prefix?.Symbol}{BaseUnit.Symbol}{strExp}";
     }
 

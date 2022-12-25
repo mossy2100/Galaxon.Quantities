@@ -1,4 +1,6 @@
-namespace AstroMultimedia.Quantities.Tests;
+using Galaxon.Quantities;
+
+namespace Galaxon.Quantities.Tests;
 
 [TestClass]
 public class TestBaseUnit

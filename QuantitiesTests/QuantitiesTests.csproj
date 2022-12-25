@@ -5,8 +5,8 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <IsPackable>false</IsPackable>
-        <RootNamespace>AstroMultimedia.Quantities.Tests</RootNamespace>
-        <AssemblyName>AstroMultimedia.Quantities.Tests</AssemblyName>
+        <RootNamespace>Galaxon.Quantities.Tests</RootNamespace>
+        <AssemblyName>Galaxon.Quantities.Tests</AssemblyName>
     </PropertyGroup>
 
     <ItemGroup>
@@ -21,11 +21,11 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Reference Include="AstroMultimedia.Core.Testing">
-        <HintPath>..\..\Core\Testing\bin\Debug\net7.0\AstroMultimedia.Core.Testing.dll</HintPath>
+      <Reference Include="Galaxon.Core.Testing">
+        <HintPath>..\..\Core\Testing\bin\Debug\net7.0\Galaxon.Core.Testing.dll</HintPath>
       </Reference>
-      <Reference Include="AstroMultimedia.Core.Time">
-        <HintPath>..\..\Core\Time\bin\Debug\net7.0\AstroMultimedia.Core.Time.dll</HintPath>
+      <Reference Include="Galaxon.Core.Time">
+        <HintPath>..\..\Core\Time\bin\Debug\net7.0\Galaxon.Core.Time.dll</HintPath>
       </Reference>
     </ItemGroup>
 

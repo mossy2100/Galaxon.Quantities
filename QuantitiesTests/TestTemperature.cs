@@ -1,6 +1,6 @@
-using AstroMultimedia.Core.Testing;
+using Galaxon.Core.Testing;
 
-namespace AstroMultimedia.Quantities.Tests;
+namespace Galaxon.Quantities.Tests;
 
 [TestClass]
 public class TestTemperature

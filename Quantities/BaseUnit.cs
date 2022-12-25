@@ -1,7 +1,7 @@
-using AstroMultimedia.Core.Collections;
-using AstroMultimedia.Core.Exceptions;
+using Galaxon.Core.Collections;
+using Galaxon.Core.Exceptions;
 
-namespace AstroMultimedia.Quantities;
+namespace Galaxon.Quantities;
 
 public class BaseUnit
 {

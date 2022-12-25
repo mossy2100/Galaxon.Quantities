@@ -1,11 +1,11 @@
 using System.Text;
 using System.Text.RegularExpressions;
-using AstroMultimedia.Core.Exceptions;
-using AstroMultimedia.Core.Numbers;
-using AstroMultimedia.Core.Strings;
-using AstroMultimedia.Numerics.Integers;
+using Galaxon.Core.Exceptions;
+using Galaxon.Core.Numbers;
+using Galaxon.Core.Strings;
+using Galaxon.Numerics.Integers;
 
-namespace AstroMultimedia.Quantities;
+namespace Galaxon.Quantities;
 
 public class Quantity
 {

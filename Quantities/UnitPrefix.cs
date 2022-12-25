@@ -1,6 +1,6 @@
-using AstroMultimedia.Core.Exceptions;
+using Galaxon.Core.Exceptions;
 
-namespace AstroMultimedia.Quantities;
+namespace Galaxon.Quantities;
 
 public class UnitPrefix
 {

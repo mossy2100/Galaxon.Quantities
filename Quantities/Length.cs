@@ -1,4 +1,4 @@
-﻿namespace AstroMultimedia.Quantities;
+﻿namespace Galaxon.Quantities;
 
 public static class Length
 {

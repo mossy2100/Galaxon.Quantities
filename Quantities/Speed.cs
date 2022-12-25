@@ -1,6 +1,6 @@
-﻿using AstroMultimedia.Core.Time;
+﻿using Galaxon.Core.Time;
 
-namespace AstroMultimedia.Quantities;
+namespace Galaxon.Quantities;
 
 public static class Speed
 {

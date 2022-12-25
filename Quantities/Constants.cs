@@ -1,4 +1,4 @@
-namespace AstroMultimedia.Quantities;
+namespace Galaxon.Quantities;
 
 /// <summary>
 ///     <see href="https://en.wikipedia.org/wiki/Physical_constant#Table_of_physical_constants" />
@@ -64,4 +64,9 @@ public static class Constants
     /// Von Klitzing constant.
     /// </summary>
     public static readonly Quantity VonKlitzing = new(25_812.807_45, "Ω");
+
+    /// <summary>
+    /// Avogadro constant.
+    /// </summary>
+    public static readonly Quantity Avogadro = new(6.02214076E23, "mol-1");
 }
