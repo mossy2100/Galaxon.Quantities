@@ -20,7 +20,8 @@ public class BaseUnit
         FromMetric = fromMetric;
     }
 
-    public BaseUnit(string symbol, string name, List<UnitPrefix>? validPrefixes, string metricUnitSymbol)
+    public BaseUnit(string symbol, string name, List<UnitPrefix>? validPrefixes,
+        string metricUnitSymbol)
         : this(symbol, name, validPrefixes, 1, metricUnitSymbol)
     {
     }
@@ -78,7 +79,7 @@ public class BaseUnit
     /// <summary>
     /// Internal collection of all known units.
     /// </summary>
-    private static readonly List<BaseUnit> s_allKnown = new();
+    private static readonly List<BaseUnit> s_allKnown = new ();
 
     /// <summary>
     /// Get all the known units.
@@ -110,7 +111,7 @@ public class BaseUnit
         }
 
         // Get the next order number and add the new unit to the collection.
-        int maxOrder = s_allKnown.IsEmpty() ? 0 : s_allKnown.Select(bu => bu.Order).Max();
+        var maxOrder = s_allKnown.IsEmpty() ? 0 : s_allKnown.Select(bu => bu.Order).Max();
         baseUnit.Order = maxOrder + 1;
         s_allKnown.Add(baseUnit);
     }
@@ -121,7 +122,6 @@ public class BaseUnit
     /// how prefixes are handled. Grams are converted back to kg in Quantity.ToMetric().
     /// <see href="https://en.wikipedia.org/wiki/International_System_of_Units" />
     /// <see href="https://en.wikipedia.org/wiki/SI_base_unit" />
-    ///
     /// These have to be in a specific order.
     /// <see href="https://en.wikipedia.org/wiki/International_System_of_Quantities#Derived_quantities" />
     /// </summary>
@@ -170,7 +170,8 @@ public class BaseUnit
     /// <summary>
     /// Add support for non-SI units accepted for use with SI (plus a few more).
     /// Most come from the Wikipedia article but a few extra have been added.
-    /// <see href="https://en.wikipedia.org/wiki/International_System_of_Units#Non-SI_units_accepted_for_use_with_SI" />
+    /// <see
+    ///     href="https://en.wikipedia.org/wiki/International_System_of_Units#Non-SI_units_accepted_for_use_with_SI" />
     /// <see href="https://en.wikipedia.org/wiki/Unit_of_time" />
     /// </summary>
     public static void AddSiAcceptedUnits()
@@ -205,7 +206,6 @@ public class BaseUnit
 
     /// <summary>
     /// Some common units that don't fit into the other groups.
-    ///
     /// Re metric prefixes and years:
     /// <see href="https://en.wikipedia.org/wiki/Kyr" />
     /// <see href="https://en.wikipedia.org/wiki/Myr" />
@@ -297,7 +297,7 @@ public class BaseUnit
     /// </summary>
     public static void AddBinaryUnits()
     {
-        List<UnitPrefix> prefixes = UnitPrefix.Combine(UnitPrefix.Binary, UnitPrefix.LargeMetric);
+        var prefixes = UnitPrefix.Combine(UnitPrefix.Binary, UnitPrefix.LargeMetric);
         Add(new BaseUnit("b", "bit", prefixes, 0.125, "B"));
         Add(new BaseUnit("B", "byte", prefixes));
     }
@@ -309,7 +309,7 @@ public class BaseUnit
     /// </summary>
     public static void AddCurrencyUnits()
     {
-        List<UnitPrefix> prefixes = UnitPrefix.GetMultiple("k,K,M,B,T");
+        var prefixes = UnitPrefix.GetMultiple("k,K,M,B,T");
         Add(new BaseUnit("$", "dollar", prefixes));
         Add(new BaseUnit("€", "euro", prefixes));
         Add(new BaseUnit("£", "pound", prefixes));
@@ -348,8 +348,8 @@ public class BaseUnit
     /// <returns>A list of symbols that have clashes.</returns>
     public static IEnumerable<string> Clashes()
     {
-        List<string> symbols = new();
-        List<string> clashes = new();
+        List<string> symbols = new ();
+        List<string> clashes = new ();
 
         // Useful function.
         void AddWithCheck(string prefixPlusSymbol)
@@ -365,14 +365,14 @@ public class BaseUnit
         }
 
         // Check all possible symbols for each unit.
-        foreach (BaseUnit baseUnit in AllKnown)
+        foreach (var baseUnit in AllKnown)
         {
             AddWithCheck(baseUnit.Symbol);
             if (baseUnit.ValidPrefixes == null)
             {
                 continue;
             }
-            foreach (UnitPrefix prefix in baseUnit.ValidPrefixes)
+            foreach (var prefix in baseUnit.ValidPrefixes)
             {
                 AddWithCheck($"{prefix.Symbol}{baseUnit.Symbol}");
             }
@@ -385,15 +385,20 @@ public class BaseUnit
 
     #region Miscellaneous methods
 
-    public override string ToString() => Symbol;
+    public override string ToString()
+    {
+        return Symbol;
+    }
 
     /// <summary>
     /// Return the base unit corresponding to the given symbol.
     /// </summary>
     /// <param name="symbol"></param>
     /// <returns></returns>
-    public static BaseUnit? Get(string symbol) =>
-        AllKnown.FirstOrDefault(baseUnit => symbol == baseUnit.Symbol);
+    public static BaseUnit? Get(string symbol)
+    {
+        return AllKnown.FirstOrDefault(baseUnit => symbol == baseUnit.Symbol);
+    }
 
     #endregion Miscellaneous methods
 }

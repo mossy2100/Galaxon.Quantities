@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
 using Galaxon.Core.Exceptions;
-using Galaxon.Core.Strings;
+using Galaxon.Core.Numbers;
 
 namespace Galaxon.Quantities;
 
@@ -31,13 +31,19 @@ public class Unit
     /// </summary>
     /// <param name="baseUnit"></param>
     /// <returns></returns>
-    public static implicit operator Unit(BaseUnit baseUnit) => new(baseUnit);
+    public static implicit operator Unit(BaseUnit baseUnit)
+    {
+        return new Unit(baseUnit);
+    }
 
     /// <summary>
     /// Clone.
     /// We don't need to clone the Unit or Prefix objects as these are immutable.
     /// </summary>
-    public Unit Clone() => new(BaseUnit, Prefix, Exponent);
+    public Unit Clone()
+    {
+        return new Unit(BaseUnit, Prefix, Exponent);
+    }
 
     public override bool Equals(object? obj)
     {
@@ -48,19 +54,25 @@ public class Unit
         return BaseUnit == unit2.BaseUnit && Prefix == unit2.Prefix && Exponent == unit2.Exponent;
     }
 
-    public override int GetHashCode() => ToString().GetHashCode();
+    public override int GetHashCode()
+    {
+        return ToString().GetHashCode();
+    }
 
     #region String methods
 
     public string ToString(string format)
     {
-        string strExp = (Exponent == 1)
+        var strExp = Exponent == 1
             ? ""
-            : ((format == "U" ? Exponent.ToSuperscript() : Exponent.ToString()) ?? "");
+            : (format == "U" ? Exponent.ToSuperscript() : Exponent.ToString());
         return $"{Prefix?.Symbol}{BaseUnit.Symbol}{strExp}";
     }
 
-    public override string ToString() => ToString("U");
+    public override string ToString()
+    {
+        return ToString("U");
+    }
 
     /// <summary>
     /// Given a symbol string comprising a base unit plus possibly a prefix and/or exponent, return
@@ -70,19 +82,19 @@ public class Unit
     /// <returns></returns>
     public static Unit Parse(string symbol)
     {
-        Match match = Regex.Match(symbol, $"^{Quantity.RxsPrefixBase}{Quantity.RxsUnitExp}$");
+        var match = Regex.Match(symbol, $"^{Quantity.RxsPrefixBase}{Quantity.RxsUnitExp}$");
         if (!match.Success)
         {
             throw new ArgumentFormatException(nameof(symbol),
                 "Incorrect format or invalid or unknown unit.");
         }
 
-        string prefixBase = match.Groups["prefixBase"].Value;
-        string strExp = match.Groups["exp"].Value;
-        int exp = (strExp == "") ? 1 : int.Parse(strExp);
+        var prefixBase = match.Groups["prefixBase"].Value;
+        var strExp = match.Groups["exp"].Value;
+        var exp = strExp == "" ? 1 : int.Parse(strExp);
 
         // Look for a valid match of prefix and base unit.
-        foreach (BaseUnit baseUnit in BaseUnit.AllKnown)
+        foreach (var baseUnit in BaseUnit.AllKnown)
         {
             // Check base symbol with no prefix.
             if (baseUnit.Symbol == prefixBase)
@@ -91,7 +103,7 @@ public class Unit
             }
 
             // Look for a match with a prefix.
-            UnitPrefix? prefix = baseUnit.ValidPrefixes?
+            var prefix = baseUnit.ValidPrefixes?
                 .FirstOrDefault(prefix => $"{prefix.Symbol}{baseUnit.Symbol}" == prefixBase);
             if (prefix != null)
             {

@@ -1,11 +1,11 @@
-using Galaxon.Core.Testing;
+using Galaxon.Core.Numbers;
 
 namespace Galaxon.Quantities.Tests;
 
 [TestClass]
 public class TestTemperature
 {
-    private static readonly List<(double k, double c, double f)> s_equivalentTemps = new()
+    private static readonly List<(double k, double c, double f)> _EquivalentTemps = new ()
     {
         // Absolute zero.
         (0, -273.15, -459.67),
@@ -26,54 +26,54 @@ public class TestTemperature
     [TestMethod]
     public void TestCelsiusToKelvin()
     {
-        foreach ((double k, double c, double f) set in s_equivalentTemps)
+        foreach (var set in _EquivalentTemps)
         {
-            XAssert.AreEqual(set.k, Temperature.CelsiusToKelvin(set.c));
+            Assert.AreEqual(set.k, Temperature.CelsiusToKelvin(set.c), XDouble.Delta);
         }
     }
 
     [TestMethod]
     public void TestKelvinToCelsius()
     {
-        foreach ((double k, double c, double f) set in s_equivalentTemps)
+        foreach (var set in _EquivalentTemps)
         {
-            XAssert.AreEqual(set.c, Temperature.KelvinToCelsius(set.k));
+            Assert.AreEqual(set.c, Temperature.KelvinToCelsius(set.k), XDouble.Delta);
         }
     }
 
     [TestMethod]
     public void TestCelsiusToFahrenheit()
     {
-        foreach ((double k, double c, double f) set in s_equivalentTemps)
+        foreach (var set in _EquivalentTemps)
         {
-            XAssert.AreEqual(set.f, Temperature.CelsiusToFahrenheit(set.c));
+            Assert.AreEqual(set.f, Temperature.CelsiusToFahrenheit(set.c), XDouble.Delta);
         }
     }
 
     [TestMethod]
     public void TestFahrenheitToCelsius()
     {
-        foreach ((double k, double c, double f) set in s_equivalentTemps)
+        foreach (var set in _EquivalentTemps)
         {
-            XAssert.AreEqual(set.c, Temperature.FahrenheitToCelsius(set.f));
+            Assert.AreEqual(set.c, Temperature.FahrenheitToCelsius(set.f), XDouble.Delta);
         }
     }
 
     [TestMethod]
     public void TestFahrenheitToKelvin()
     {
-        foreach ((double k, double c, double f) set in s_equivalentTemps)
+        foreach (var set in _EquivalentTemps)
         {
-            XAssert.AreEqual(set.k, Temperature.FahrenheitToKelvin(set.f));
+            Assert.AreEqual(set.k, Temperature.FahrenheitToKelvin(set.f), XDouble.Delta);
         }
     }
 
     [TestMethod]
     public void TestKelvinToFahrenheit()
     {
-        foreach ((double k, double c, double f) set in s_equivalentTemps)
+        foreach (var set in _EquivalentTemps)
         {
-            XAssert.AreEqual(set.f, Temperature.KelvinToFahrenheit(set.k));
+            Assert.AreEqual(set.f, Temperature.KelvinToFahrenheit(set.k), XDouble.Delta);
         }
     }
 }

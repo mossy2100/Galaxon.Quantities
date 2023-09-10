@@ -22,21 +22,33 @@ public static class Temperature
     /// </summary>
     /// <param name="c">Temperature in Celsius.</param>
     /// <returns>Temperature in Kelvin.</returns>
-    public static double CelsiusToKelvin(double c) =>
-        c + CelsiusKelvinDiff;
+    public static double CelsiusToKelvin(double c)
+    {
+        return c + CelsiusKelvinDiff;
+    }
 
-    public static double KelvinToCelsius(double k) =>
-        k - CelsiusKelvinDiff;
+    public static double KelvinToCelsius(double k)
+    {
+        return k - CelsiusKelvinDiff;
+    }
 
-    public static double CelsiusToFahrenheit(double c) =>
-        (c / CelsiusPerFahrenheit) + CelsiusFahrenheitDiff;
+    public static double CelsiusToFahrenheit(double c)
+    {
+        return c / CelsiusPerFahrenheit + CelsiusFahrenheitDiff;
+    }
 
-    public static double FahrenheitToCelsius(double f) =>
-        (f - CelsiusFahrenheitDiff) * CelsiusPerFahrenheit;
+    public static double FahrenheitToCelsius(double f)
+    {
+        return (f - CelsiusFahrenheitDiff) * CelsiusPerFahrenheit;
+    }
 
-    public static double FahrenheitToKelvin(double f) =>
-        CelsiusToKelvin(FahrenheitToCelsius(f));
+    public static double FahrenheitToKelvin(double f)
+    {
+        return CelsiusToKelvin(FahrenheitToCelsius(f));
+    }
 
-    public static double KelvinToFahrenheit(double k) =>
-        CelsiusToFahrenheit(KelvinToCelsius(k));
+    public static double KelvinToFahrenheit(double k)
+    {
+        return CelsiusToFahrenheit(KelvinToCelsius(k));
+    }
 }

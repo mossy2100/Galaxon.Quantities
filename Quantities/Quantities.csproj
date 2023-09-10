@@ -11,24 +11,27 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Reference Include="Galaxon.Core.Collections">
-        <HintPath>..\..\Core\Collections\bin\Debug\net7.0\Galaxon.Core.Collections.dll</HintPath>
-      </Reference>
-      <Reference Include="Galaxon.Core.Exceptions">
-        <HintPath>..\..\Core\Exceptions\bin\Debug\net7.0\Galaxon.Core.Exceptions.dll</HintPath>
-      </Reference>
-      <Reference Include="Galaxon.Core.Numbers">
-        <HintPath>..\..\Core\Numbers\bin\Debug\net7.0\Galaxon.Core.Numbers.dll</HintPath>
-      </Reference>
-      <Reference Include="Galaxon.Core.Strings">
-        <HintPath>..\..\Core\Strings\bin\Debug\net7.0\Galaxon.Core.Strings.dll</HintPath>
-      </Reference>
-      <Reference Include="Galaxon.Core.Time">
-        <HintPath>..\..\Core\Time\bin\Debug\net7.0\Galaxon.Core.Time.dll</HintPath>
-      </Reference>
-      <Reference Include="Galaxon.Numerics.Integers">
-        <HintPath>..\..\Numerics\Integers\bin\Debug\net7.0\Galaxon.Numerics.Integers.dll</HintPath>
-      </Reference>
+        <Reference Include="Galaxon.Core">
+            <HintPath>..\..\Core\Core\bin\Debug\net7.0\Galaxon.Core.dll</HintPath>
+        </Reference>
+        <Reference Include="Galaxon.Core.Collections">
+            <HintPath>..\..\Core\Collections\bin\Debug\net7.0\Galaxon.Core.Collections.dll</HintPath>
+        </Reference>
+        <Reference Include="Galaxon.Core.Exceptions">
+            <HintPath>..\..\Core\Exceptions\bin\Debug\net7.0\Galaxon.Core.Exceptions.dll</HintPath>
+        </Reference>
+        <Reference Include="Galaxon.Core.Numbers">
+            <HintPath>..\..\Core\Numbers\bin\Debug\net7.0\Galaxon.Core.Numbers.dll</HintPath>
+        </Reference>
+        <Reference Include="Galaxon.Core.Strings">
+            <HintPath>..\..\Core\Strings\bin\Debug\net7.0\Galaxon.Core.Strings.dll</HintPath>
+        </Reference>
+        <Reference Include="Galaxon.Core.Time">
+            <HintPath>..\..\Core\Time\bin\Debug\net7.0\Galaxon.Core.Time.dll</HintPath>
+        </Reference>
+        <Reference Include="Galaxon.Numerics.Integers">
+            <HintPath>..\..\Numerics\Integers\bin\Debug\net7.0\Galaxon.Numerics.Integers.dll</HintPath>
+        </Reference>
     </ItemGroup>
 
 </Project>

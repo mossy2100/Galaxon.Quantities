@@ -9,6 +9,8 @@ public static class Speed
     /// </summary>
     /// <param name="kmPerHour">Speed in km/h.</param>
     /// <returns>Speed in m/s.</returns>
-    public static double KmPerHourToMetresPerSecond(double kmPerHour) =>
-        kmPerHour * UnitPrefix.GetMultiplier("k") / XTimeSpan.SecondsPerHour;
+    public static double KmPerHourToMetresPerSecond(double kmPerHour)
+    {
+        return kmPerHour * UnitPrefix.GetMultiplier("k") / XTimeSpan.SecondsPerHour;
+    }
 }

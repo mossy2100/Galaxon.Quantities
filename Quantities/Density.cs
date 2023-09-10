@@ -7,6 +7,8 @@ public static class Density
     /// </summary>
     /// <param name="gramsPerCm3">Density in g/cm3.</param>
     /// <returns>Density in kg/m3.</returns>
-    public static double GramsPerCm3ToKgPerM3(double gramsPerCm3) =>
-        gramsPerCm3 * 1000;
+    public static double GramsPerCm3ToKgPerM3(double gramsPerCm3)
+    {
+        return gramsPerCm3 * 1000;
+    }
 }
